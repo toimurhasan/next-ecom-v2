@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-:root {
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -17,10 +19,10 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 /* Support toggling via .dark class (when using Tailwind's class strategy) */
-.dark {
+/* .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
 }
@@ -29,4 +31,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
