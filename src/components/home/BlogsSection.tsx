@@ -22,7 +22,7 @@ const blogs: Blog[] = [
 export default function BlogsSection() {
   return (
     <section className="py-12 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container-custom mx-auto px-4">
         <SectionTitle title="OUR NEW BLOGS" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
           {blogs.map((blog) => (

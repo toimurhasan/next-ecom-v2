@@ -8,6 +8,7 @@ import ProductShowcase from "@/components/home/ProductShowcase";
 import PromotionalBanners from "@/components/home/PromotionalBanners";
 import { Product } from "@/types";
 import AllCategories from "@/components/home/AllCategories";
+import ProductGrid from "@/components/product/ProductGrid";
 
 // Sample product data - in a real app, this would come from an API
 const topSellingProducts: Product[] = [
@@ -57,6 +58,7 @@ export default function Home() {
         <BlogsSection />
         <TestimonialsSection />
         <ProductShowcase />
+        <PromotionalBanners />
       </main>
       <Footer />
     </>

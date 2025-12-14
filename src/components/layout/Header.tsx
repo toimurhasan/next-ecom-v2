@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="bg-white dark:bg-gray-900 shadow-sm">
       {/* Top Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <div className="container-custom mx-auto px-4 py-4 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
           <span className="text-2xl font-bold">
@@ -82,7 +82,7 @@ export default function Header() {
 
       {/* Category Navigation Bar */}
       <div className="border-t border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="container-custom mx-auto px-4">
           <nav
             aria-label="Category navigation"
             className="hidden lg:flex items-center justify-center gap-4 py-3 overflow-x-auto"

@@ -18,7 +18,7 @@ export default function NewsletterSection() {
 
   return (
     <div className="flex justify-center items-center py-8 bg-[#18181B] dark:bg-gray-950 text-white">
-      <div className="flex flex-col justify-between w-full max-w-7xl gap-10 px-4">
+      <div className="flex flex-col justify-between w-full container-custom gap-10 px-4">
         <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20">
           {/* Email Subscription */}
           <div className="flex flex-col gap-3 w-full flex-2">

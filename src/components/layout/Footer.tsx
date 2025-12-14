@@ -110,7 +110,7 @@ const Footer: FC = () => {
     <>
       <NewsletterSection />
       <footer className="bg-black py-10">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="container-custom mx-auto px-4">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 sm:gap-14 gap-4 justify-center items-center sm:items-start text-center sm:text-start">
             <div>
               <Link href="/" className="inline-block shrink-0">

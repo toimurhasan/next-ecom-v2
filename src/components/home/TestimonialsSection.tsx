@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
 export default function TestimonialsSection() {
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container-custom mx-auto px-4">
         <SectionTitle title="TESTIMONIALS" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {testimonials.map((testimonial) => (

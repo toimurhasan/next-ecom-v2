@@ -7,30 +7,66 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { name: "Smart Phone", image: "/categories/smartphone.jpg", href: "/categories/smartphone" },
-  { name: "Smart Watch", image: "/categories/smartwatch.jpg", href: "/categories/smartwatch" },
-  { name: "Air Buds", image: "/categories/airbuds.jpg", href: "/categories/airbuds" },
+  {
+    name: "Smart Phone",
+    image: "/categories/smartphone.jpg",
+    href: "/categories/smartphone",
+  },
+  {
+    name: "Smart Watch",
+    image: "/categories/smartwatch.jpg",
+    href: "/categories/smartwatch",
+  },
+  {
+    name: "Air Buds",
+    image: "/categories/airbuds.jpg",
+    href: "/categories/airbuds",
+  },
   { name: "Honey", image: "/categories/honey.jpg", href: "/categories/honey" },
-  { name: "Dry Foods", image: "/categories/dryfoods.jpg", href: "/categories/dryfoods" },
+  {
+    name: "Dry Foods",
+    image: "/categories/dryfoods.jpg",
+    href: "/categories/dryfoods",
+  },
 ];
 
 const mainCategories: Category[] = [
-  { name: "ELECTRONICS", image: "/categories/electronics.jpg", href: "/categories/electronics" },
-  { name: "GROCERY", image: "/categories/grocery.jpg", href: "/categories/grocery" },
-  { name: "BEAUTY", image: "/categories/beauty.jpg", href: "/categories/beauty" },
-  { name: "FASHION", image: "/categories/fashion.jpg", href: "/categories/fashion" },
-  { name: "FOOTWEAR", image: "/categories/footwear.jpg", href: "/categories/footwear" },
+  {
+    name: "ELECTRONICS",
+    image: "/categories/electronics.jpg",
+    href: "/categories/electronics",
+  },
+  {
+    name: "GROCERY",
+    image: "/categories/grocery.jpg",
+    href: "/categories/grocery",
+  },
+  {
+    name: "BEAUTY",
+    image: "/categories/beauty.jpg",
+    href: "/categories/beauty",
+  },
+  {
+    name: "FASHION",
+    image: "/categories/fashion.jpg",
+    href: "/categories/fashion",
+  },
+  {
+    name: "FOOTWEAR",
+    image: "/categories/footwear.jpg",
+    href: "/categories/footwear",
+  },
   { name: "FOODS", image: "/categories/foods.jpg", href: "/categories/foods" },
 ];
 
 export default function CategoriesSection() {
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container-custom mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
           OUR ALL CATEGORIES
         </h2>
-        
+
         {/* Small Categories Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
           {categories.map((category) => (
@@ -72,4 +108,3 @@ export default function CategoriesSection() {
     </section>
   );
 }
-

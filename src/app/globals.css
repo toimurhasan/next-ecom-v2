@@ -32,3 +32,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 } */
+
+@layer components {
+  .container-custom {
+    /* @apply max-w-[1320px] mx-auto md:px-20 px-6; */
+    @apply max-w-[1320px] mx-auto;
+  }
+}

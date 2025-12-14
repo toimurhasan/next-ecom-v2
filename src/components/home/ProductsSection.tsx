@@ -13,7 +13,7 @@ export default function ProductsSection({
 }: ProductsSectionProps) {
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container-custom mx-auto px-4">
         <SectionTitle title={title} />
         <ProductGrid products={products} />
       </div>
