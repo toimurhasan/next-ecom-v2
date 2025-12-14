@@ -1,9 +1,14 @@
+import Image from "next/image";
+import QuoteIcon from "../icons/QuoteIcon";
+import StarIcon from "../icons/StarIcon";
+
 interface Testimonial {
   id: string;
   name: string;
   rating: number;
   comment: string;
   avatar: string;
+  role?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -11,29 +16,37 @@ const testimonials: Testimonial[] = [
     id: "1",
     name: "Rahim Rahman",
     rating: 5,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/user1.jpg",
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    avatar: "/avatars/profile.png",
+    role: "Software Engineer",
   },
   {
     id: "2",
     name: "Karim Rahman",
     rating: 5,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/user2.jpg",
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    avatar: "/avatars/profile.png",
+    role: "Software Engineer",
   },
   {
     id: "3",
     name: "Fatima Begum",
     rating: 5,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/user3.jpg",
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    avatar: "/avatars/profile.png",
+    role: "Software Engineer",
   },
   {
     id: "4",
     name: "Ahmed Hasan",
     rating: 5,
-    comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/user4.jpg",
+    comment:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    avatar: "/avatars/profile.png",
+    role: "Software Engineer",
   },
 ];
 
@@ -48,29 +61,46 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border border-gray-200 dark:border-gray-700"
+              className="py-6 px-4 bg-[#EFF4FB] dark:bg-gray-800 rounded-lg"
             >
-              <div className="text-green-600 text-4xl mb-4">"</div>
-              <p className="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-4">
-                {testimonial.comment}
-              </p>
-              <div className="flex items-center gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">
-                    ★
-                  </span>
-                ))}
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-green-100 dark:bg-green-900 flex items-center justify-center">
-                  <span className="text-green-600 dark:text-green-400 font-bold">
-                    {testimonial.name.charAt(0)}
-                  </span>
+              <div className="space-y-4">
+                <QuoteIcon className="w-12 h-12 text-green-600 dark:text-green-400" />
+                <div className="text-sm text-gray-700 dark:text-gray-300">
+                  {testimonial.comment}
                 </div>
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
-                    {testimonial.name}
-                  </p>
+                <div className="flex gap-1">
+                  {Array.from({ length: testimonial.rating }).map((_, i) => (
+                    <StarIcon
+                      key={i}
+                      className="w-[18px] h-[18px] text-yellow-500"
+                      filled={true}
+                    />
+                  ))}
+                </div>
+                <div className="flex gap-2">
+                  <div className="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center overflow-hidden shrink-0">
+                    {testimonial.avatar ? (
+                      <Image
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className="w-full h-full rounded-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-green-600 dark:text-green-400 font-bold text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-green-600 dark:text-green-400">
+                      {testimonial.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      {testimonial.role || "Customer"}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -80,4 +110,3 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-

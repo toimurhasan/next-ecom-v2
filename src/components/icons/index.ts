@@ -9,4 +9,6 @@ export { default as PhoneIcon } from "./PhoneIcon";
 export { default as CashOnDeliveryIcon } from "./CashOnDeliveryIcon";
 export { default as DeliveryTruckIcon } from "./DeliveryTruckIcon";
 export { default as ReturnIcon } from "./ReturnIcon";
+export { default as QuoteIcon } from "./QuoteIcon";
+export { default as StarIcon } from "./StarIcon";
 
