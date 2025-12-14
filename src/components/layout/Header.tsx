@@ -4,6 +4,10 @@ import { useState } from "react";
 import SearchBar from "../forms/SearchBar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import LightningBoltIcon from "../icons/LightningBoltIcon";
+import HeartIcon from "../icons/HeartIcon";
+import ShoppingBagIcon from "../icons/ShoppingBagIcon";
+import MenuIcon from "../icons/MenuIcon";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,13 +38,7 @@ export default function Header() {
             href="/offers"
             className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-green-600 transition-all shadow-sm"
           >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fillRule="evenodd"
-                d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <LightningBoltIcon className="w-4 h-4" />
             <span>OFFERS</span>
           </Link>
 
@@ -49,19 +47,7 @@ export default function Header() {
             href="/wishlist"
             className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gray-800 dark:bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
           >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              />
-            </svg>
+            <HeartIcon className="w-4 h-4" />
             <span>WISHLIST</span>
           </Link>
 
@@ -79,19 +65,7 @@ export default function Header() {
             className="flex items-center gap-1.5 px-4 py-2.5 bg-green-600 dark:bg-green-700 text-white font-semibold rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors shadow-sm"
             aria-label="Shopping cart"
           >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-              />
-            </svg>
+            <ShoppingBagIcon className="w-5 h-5" />
             <span>BAGS {cartCount || 0}</span>
           </Link>
 
@@ -101,19 +75,7 @@ export default function Header() {
             onClick={() => setIsOpen((v) => !v)}
             aria-label="Open menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            <MenuIcon className="w-6 h-6" />
           </button>
         </div>
       </div>
