@@ -1,57 +1,50 @@
+import React from "react";
 import LargeCard from "../cards/LargeCard";
 import SmallCard from "../cards/SmallCard";
 import SmallestCard from "../cards/SmallestCard";
 import SectionTitle from "../common/SectionTitle";
 
-const AllCategories = () => {
+export interface AllCategoriesProps {
+  title?: string;
+  smallItems?: Array<Record<string, any>>;
+  largeItems?: Array<Record<string, any>>;
+  smallestItems?: Array<Record<string, any>>;
+  className?: string;
+}
+
+const AllCategories: React.FC<AllCategoriesProps> = ({
+  title = "Our All Categories",
+  smallItems = Array.from({ length: 20 }),
+  largeItems = Array.from({ length: 6 }),
+  smallestItems = Array.from({ length: 8 }),
+  className = "",
+}) => {
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <SectionTitle title={"Our All Categories"} />
+    <div className={`max-w-7xl mx-auto px-4 ${className}`}>
+      <SectionTitle title={title} />
+
       <div className="lg:py-5 py-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 lg:gap-5 px-2 ">
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
+        {smallItems.map((_, i) => (
+          <SmallCard key={i} />
+        ))}
       </div>
+
       <div className="lg:py-5 py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-5 px-2 ">
-        <LargeCard />
-        <LargeCard />
-        <LargeCard />
-        <LargeCard />
-        <LargeCard />
-        <LargeCard />
+        {largeItems.map((_, i) => (
+          <LargeCard key={i} />
+        ))}
       </div>
+
       <div className=" lg:py-5 py-2 grid grid-cols-2 sm:grid-cols-4 gap-2 lg:grid-cols-6 lg:gap-5 px-2 ">
         <div className="col-span-2 row-span-2">
           <LargeCard />
         </div>
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
-        <SmallestCard />
+        {smallestItems.map((_, i) => (
+          <SmallestCard key={i} />
+        ))}
       </div>
     </div>
   );
 };
 
-export default AllCategories;
+export default React.memo(AllCategories);
