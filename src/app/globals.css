@@ -43,3 +43,7 @@ body {
 #my-range-slider .range-slider__range {
   background: #ffbf00;
 }
+
+#my-range-slider .range-slider__thumb {
+  background: #ffbf00;
+}
