@@ -1,27 +1,12 @@
 import SearchBar from "../forms/SearchBar";
+import PriceRange from "./PriceRange";
 
 export default function ProductFilterSidebar() {
   return (
     <div className="bg-white border p-4 rounded-md">
-      <div className="mb-4">
-        <SearchBar />
-      </div>
-
       <section className="mb-6">
         <h3 className="font-semibold mb-3">Price Range</h3>
-        <div className="flex items-center gap-3">
-          <input
-            type="range"
-            min={0}
-            max={25000}
-            defaultValue={25000}
-            className="w-full"
-          />
-        </div>
-        <div className="flex justify-between text-sm text-gray-600 mt-2">
-          <span>0</span>
-          <span>25000</span>
-        </div>
+        <PriceRange min={0} max={25000} step={100} />
       </section>
 
       <section className="mb-6">
