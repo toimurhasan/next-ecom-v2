@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "../context/ThemeProvider";
 import StoreProvider from "../store/StoreProvider";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +18,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "YOURCHOICE - Online Shopping",
-  description: "Your trusted online shopping destination for quality products at great prices",
+  description:
+    "Your trusted online shopping destination for quality products at great prices",
 };
 
 export default function RootLayout({
@@ -30,7 +33,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <StoreProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <Header />
+            <main className="mt-36">{children}</main>
+            <Footer />
+          </ThemeProvider>
         </StoreProvider>
       </body>
     </html>

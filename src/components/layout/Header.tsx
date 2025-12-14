@@ -15,7 +15,7 @@ export default function Header() {
   const cartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-sm">
+    <header className="bg-white dark:bg-gray-900 shadow-sm fixed z-50 w-full top-0">
       {/* Top Navigation Bar */}
       <div className="container-custom mx-auto px-4 py-4 flex items-center justify-between gap-4">
         {/* Logo */}

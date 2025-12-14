@@ -1,5 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import ProductsSection from "@/components/home/ProductsSection";
 import BlogsSection from "@/components/home/BlogsSection";
@@ -8,7 +6,6 @@ import ProductShowcase from "@/components/home/ProductShowcase";
 import PromotionalBanners from "@/components/home/PromotionalBanners";
 import { Product } from "@/types";
 import AllCategories from "@/components/home/AllCategories";
-import ProductGrid from "@/components/product/ProductGrid";
 
 // Sample product data - in a real app, this would come from an API
 const topSellingProducts: Product[] = [
@@ -42,25 +39,21 @@ const productsWithDiscount = (products: Product[]) => {
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
-        <HeroSection />
-        <AllCategories />
+      <HeroSection />
+      <AllCategories />
 
-        <ProductsSection
-          title="OUR TOP SELLING PRODUCTS"
-          products={productsWithDiscount(topSellingProducts)}
-        />
-        <ProductsSection
-          title="OUR FUTURE PRODUCTS"
-          products={productsWithDiscount(futureProducts)}
-        />
-        <BlogsSection />
-        <TestimonialsSection />
-        <ProductShowcase />
-        <PromotionalBanners />
-      </main>
-      <Footer />
+      <ProductsSection
+        title="OUR TOP SELLING PRODUCTS"
+        products={productsWithDiscount(topSellingProducts)}
+      />
+      <ProductsSection
+        title="OUR FUTURE PRODUCTS"
+        products={productsWithDiscount(futureProducts)}
+      />
+      <BlogsSection />
+      <TestimonialsSection />
+      <ProductShowcase />
+      <PromotionalBanners />
     </>
   );
 }
