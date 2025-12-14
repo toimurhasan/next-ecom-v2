@@ -1,6 +1,7 @@
 import Image from "next/image";
 import QuoteIcon from "../icons/QuoteIcon";
 import StarIcon from "../icons/StarIcon";
+import SectionTitle from "../common/SectionTitle";
 
 interface Testimonial {
   id: string;
@@ -54,14 +55,12 @@ export default function TestimonialsSection() {
   return (
     <section className="py-12 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
-          TESTIMONIALS
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SectionTitle title="TESTIMONIALS" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="py-6 px-4 bg-[#EFF4FB] dark:bg-gray-800 rounded-lg"
+              className="py-6 px-4 bg-[#EFF4FB] dark:bg-gray-800 "
             >
               <div className="space-y-4">
                 <QuoteIcon className="w-12 h-12 text-green-600 dark:text-green-400" />

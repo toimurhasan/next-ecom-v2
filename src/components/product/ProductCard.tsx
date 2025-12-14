@@ -2,6 +2,7 @@ import ImageOptimized from "../common/ImageOptimized";
 import { Product } from "../../types";
 import Button from "../ui/Button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {
   const originalPrice = product.originalPrice || product.price * 1.2;
@@ -9,33 +10,37 @@ export default function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="p-2 sm:p-3">
-      <div className="bg-white dark:bg-gray-800 rounded shadow-sm overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow">
-        <div className="w-full aspect-square overflow-hidden">
-          <ImageOptimized
-            src={product.image}
-            alt={product.title}
-            width={400}
-            height={400}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="p-3 flex-1 flex flex-col justify-between">
-          <h3 className="font-medium text-sm sm:text-base text-gray-900 dark:text-gray-100 mb-2 line-clamp-2">
-            {product.title}
-          </h3>
-          <div className="mt-auto">
-            {hasDiscount && (
-              <div className="text-gray-500 text-sm line-through mb-1">
-                ৳ {originalPrice.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-              </div>
-            )}
-            <div className="text-green-600 font-bold text-lg">
-              ৳ {product.price.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-            </div>
-            <Link href={`/products/${product.id}`} className="block mt-3">
-              <Button className="w-full text-sm py-2">BUY NOW</Button>
-            </Link>
+      <div>
+        {/* background image */}
+        <div className="bg-[url(/md-card-bg.png)] h-52 bg-cover bg-center relative text-sm bg-blend-screen">
+          <span className="bg-primary-500 px-2 py-1 absolute top-1 left-1 text-xs text-white">
+            TK 300 OFF
+          </span>
+
+          {/* centered foreground image */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <Image
+              src="/md-card.png"
+              alt="Medium card"
+              width={150}
+              height={150}
+              className="h-32 w-auto"
+            />
           </div>
+        </div>
+
+        <div className="bg-[#F3F4F6] text-center pt-4.5 pb-3">
+          <h4>Tecno Camon 40 Pro - Official</h4>
+          <div className="bg-white px-3 py-1 rounded-full w-fit mx-auto">
+            <span className="line-through">TK 28,560.00</span>{" "}
+            <span className="text-primary-500 font-semibolds">
+              TK 27,999.00
+            </span>
+          </div>
+        </div>
+
+        <div className="bg-black hover:bg-primary-500 py-2 text-center text-white uppercase font-medium cursor-pointer">
+          Buy Now
         </div>
       </div>
     </article>

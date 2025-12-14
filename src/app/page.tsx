@@ -1,13 +1,13 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/home/HeroSection";
-import CategoriesSection from "@/components/home/CategoriesSection";
-import FeaturedBanners from "@/components/home/FeaturedBanners";
 import ProductsSection from "@/components/home/ProductsSection";
 import BlogsSection from "@/components/home/BlogsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import ProductShowcase from "@/components/home/ProductShowcase";
 import PromotionalBanners from "@/components/home/PromotionalBanners";
 import { Product } from "@/types";
+import AllCategories from "@/components/home/AllCategories";
 
 // Sample product data - in a real app, this would come from an API
 const topSellingProducts: Product[] = [
@@ -114,19 +114,19 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <CategoriesSection />
-        <FeaturedBanners />
+        <AllCategories />
+
         <ProductsSection
           title="OUR TOP SELLING PRODUCTS"
           products={productsWithDiscount(topSellingProducts)}
         />
-        <PromotionalBanners />
         <ProductsSection
           title="OUR FUTURE PRODUCTS"
           products={productsWithDiscount(futureProducts)}
         />
         <BlogsSection />
         <TestimonialsSection />
+        <ProductShowcase />
       </main>
       <Footer />
     </>
