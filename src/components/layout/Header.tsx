@@ -36,7 +36,7 @@ export default function Header() {
           {/* OFFERS Button */}
           <Link
             href="/offers"
-            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-green-600 transition-all shadow-sm"
+            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-green-600 transition-all shadow-sm"
           >
             <LightningBoltIcon className="w-4 h-4" />
             <span>OFFERS</span>
@@ -45,7 +45,7 @@ export default function Header() {
           {/* WISHLIST Button */}
           <Link
             href="/wishlist"
-            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gray-800 dark:bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
+            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gray-800 dark:bg-gray-700 text-white font-semibold rounded-full hover:bg-gray-900 dark:hover:bg-gray-600 transition-colors"
           >
             <HeartIcon className="w-4 h-4" />
             <span>WISHLIST</span>
@@ -54,7 +54,7 @@ export default function Header() {
           {/* LOGIN Button */}
           <Link
             href="/login"
-            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            className="hidden lg:flex items-center gap-1.5 px-4 py-2.5 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 font-semibold rounded-full hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
           >
             <span>LOGIN</span>
           </Link>
@@ -62,7 +62,7 @@ export default function Header() {
           {/* BAGS Button with Cart Count */}
           <Link
             href="/cart"
-            className="flex items-center gap-1.5 px-4 py-2.5 bg-green-600 dark:bg-green-700 text-white font-semibold rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors shadow-sm"
+            className="flex items-center gap-1.5 px-4 py-2.5 bg-green-600 dark:bg-green-700 text-white font-semibold rounded-full hover:bg-green-700 dark:hover:bg-green-600 transition-colors shadow-sm"
             aria-label="Shopping cart"
           >
             <ShoppingBagIcon className="w-5 h-5" />
@@ -85,7 +85,7 @@ export default function Header() {
         <div className="container-custom mx-auto px-4">
           <nav
             aria-label="Category navigation"
-            className="hidden lg:flex items-center justify-center gap-4 py-3 overflow-x-auto"
+            className="hidden lg:flex items-center justify-center gap-5 py-3 overflow-x-auto"
           >
             <Link
               href="/categories/electronics"
@@ -143,25 +143,25 @@ export default function Header() {
             </Link>
             <Link
               href="/clearance-sale"
-              className="px-4 py-1.5 bg-orange-500 dark:bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors whitespace-nowrap"
+              className="px-4 py-1.5 bg-orange-500 dark:bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors whitespace-nowrap"
             >
               CLEARANCE SALE
             </Link>
             <Link
               href="/categories/men"
-              className="px-4 py-1.5 bg-blue-500 dark:bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors whitespace-nowrap"
+              className="px-4 py-1.5 bg-blue-500 dark:bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-600 dark:hover:bg-blue-500 transition-colors whitespace-nowrap"
             >
               MEN
             </Link>
             <Link
               href="/combo"
-              className="px-4 py-1.5 bg-teal-500 dark:bg-teal-600 text-white font-semibold rounded-lg hover:bg-teal-600 dark:hover:bg-teal-500 transition-colors whitespace-nowrap"
+              className="px-4 py-1.5 bg-teal-500 dark:bg-teal-600 text-white font-semibold rounded-full hover:bg-teal-600 dark:hover:bg-teal-500 transition-colors whitespace-nowrap"
             >
               COMBO
             </Link>
             <Link
               href="/categories/footwear"
-              className="px-4 py-1.5 bg-purple-500 dark:bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-600 dark:hover:bg-purple-500 transition-colors whitespace-nowrap"
+              className="px-4 py-1.5 bg-purple-500 dark:bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-600 dark:hover:bg-purple-500 transition-colors whitespace-nowrap"
             >
               FOOTWEAR
             </Link>

@@ -12,7 +12,7 @@ export default function ProductsSection({
   products,
 }: ProductsSectionProps) {
   return (
-    <section className="py-12 bg-white dark:bg-gray-900">
+    <section className=" bg-white dark:bg-gray-900">
       <div className="container-custom mx-auto px-4">
         <SectionTitle title={title} />
         <ProductGrid products={products} />
