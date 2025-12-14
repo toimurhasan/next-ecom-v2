@@ -22,33 +22,6 @@ const testimonials: Testimonial[] = [
     avatar: "/avatars/profile.png",
     role: "Software Engineer",
   },
-  {
-    id: "2",
-    name: "Karim Rahman",
-    rating: 5,
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/profile.png",
-    role: "Software Engineer",
-  },
-  {
-    id: "3",
-    name: "Fatima Begum",
-    rating: 5,
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/profile.png",
-    role: "Software Engineer",
-  },
-  {
-    id: "4",
-    name: "Ahmed Hasan",
-    rating: 5,
-    comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    avatar: "/avatars/profile.png",
-    role: "Software Engineer",
-  },
 ];
 
 export default function TestimonialsSection() {

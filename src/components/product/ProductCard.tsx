@@ -1,7 +1,6 @@
-import ImageOptimized from "../common/ImageOptimized";
+
 import { Product } from "../../types";
-import Button from "../ui/Button";
-import Link from "next/link";
+
 import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {

@@ -14,9 +14,9 @@ export interface AllCategoriesProps {
 
 const AllCategories: React.FC<AllCategoriesProps> = ({
   title = "Our All Categories",
-  smallItems = Array.from({ length: 20 }),
-  largeItems = Array.from({ length: 6 }),
-  smallestItems = Array.from({ length: 8 }),
+  smallItems = Array.from({ length: 1 }),
+  largeItems = Array.from({ length: 1 }),
+  smallestItems = Array.from({ length: 1 }),
   className = "",
 }) => {
   return (
