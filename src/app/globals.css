@@ -40,3 +40,6 @@ body {
     @apply max-w-[1320px] mx-auto;
   }
 }
+#my-range-slider .range-slider__range {
+  background: #ffbf00;
+}
