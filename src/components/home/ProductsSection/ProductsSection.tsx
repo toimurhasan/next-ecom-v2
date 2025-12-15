@@ -1,5 +1,5 @@
-import SectionTitle from "../common/SectionTitle";
-import ProductGrid from "../product/ProductGrid";
+import SectionTitle from "@/components/common/SectionTitle";
+import ProductGrid from "@/components/product/ProductGrid";
 import { Product } from "@/types";
 
 interface ProductsSectionProps {

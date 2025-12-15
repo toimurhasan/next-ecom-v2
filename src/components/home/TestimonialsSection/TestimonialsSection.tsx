@@ -1,7 +1,7 @@
+import SectionTitle from "@/components/common/SectionTitle";
+import { QuoteIcon, StarIcon } from "@/components/icons";
 import Image from "next/image";
-import QuoteIcon from "../icons/QuoteIcon";
-import StarIcon from "../icons/StarIcon";
-import SectionTitle from "../common/SectionTitle";
+
 
 interface Testimonial {
   id: string;

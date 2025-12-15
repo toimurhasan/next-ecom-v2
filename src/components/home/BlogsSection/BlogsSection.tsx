@@ -1,7 +1,8 @@
+import ImageOptimized from "@/components/common/ImageOptimized";
+import SectionTitle from "@/components/common/SectionTitle";
+import Button from "@/components/ui/Button";
 import Link from "next/link";
-import Button from "../ui/Button";
-import ImageOptimized from "../common/ImageOptimized";
-import SectionTitle from "../common/SectionTitle";
+
 
 interface Blog {
   id: string;

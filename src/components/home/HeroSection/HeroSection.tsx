@@ -1,4 +1,4 @@
-import ImageOptimized from "../common/ImageOptimized";
+import ImageOptimized from "@/components/common/ImageOptimized";
 
 export default function HeroSection() {
   return (
