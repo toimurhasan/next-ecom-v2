@@ -11,4 +11,8 @@ export { default as DeliveryTruckIcon } from "./DeliveryTruckIcon";
 export { default as ReturnIcon } from "./ReturnIcon";
 export { default as QuoteIcon } from "./QuoteIcon";
 export { default as StarIcon } from "./StarIcon";
-
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as YoutubeIcon } from "./YoutubeIcon";
+export { default as InstagramIcon } from "./InstagramIcon";
+export { default as TiktokIcon } from "./TiktokIcon";
+export { default as XIcon } from "./XIcon";

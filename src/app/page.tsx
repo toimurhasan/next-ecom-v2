@@ -1,11 +1,12 @@
-import HeroSection from "@/components/home/HeroSection";
-import ProductsSection from "@/components/home/ProductsSection";
-import BlogsSection from "@/components/home/BlogsSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import ProductShowcase from "@/components/home/ProductShowcase";
-import PromotionalBanners from "@/components/home/PromotionalBanners";
+import AllCategories from "@/components/home/AllCategories/AllCategories";
+import BlogsSection from "@/components/home/BlogsSection/BlogsSection";
+import HeroSection from "@/components/home/HeroSection/HeroSection";
+import ProductShowcase from "@/components/home/ProductShowcase/ProductShowcase";
+import ProductsSection from "@/components/home/ProductsSection/ProductsSection";
+import PromotionalBanners from "@/components/home/PromotionalBanners/PromotionalBanners";
+import TestimonialsSection from "@/components/home/TestimonialsSection/TestimonialsSection";
 import { Product } from "@/types";
-import AllCategories from "@/components/home/AllCategories";
+
 
 // Sample product data - in a real app, this would come from an API
 const topSellingProducts: Product[] = [
@@ -41,7 +42,6 @@ export default function Home() {
     <>
       <HeroSection />
       <AllCategories />
-
       <ProductsSection
         title="OUR TOP SELLING PRODUCTS"
         products={productsWithDiscount(topSellingProducts)}

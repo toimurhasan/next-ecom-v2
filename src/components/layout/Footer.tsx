@@ -1,162 +1,233 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { FC, memo } from "react";
-import {
-  FaFacebookF,
-  FaInstagramSquare,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import NewsletterSection from "./NewsletterSection";
+import { ReactNode } from "react";
+import {
+  FacebookIcon,
+  YoutubeIcon,
+  XIcon,
+  InstagramIcon,
+  TiktokIcon,
+} from "@/components/icons";
 
-type ListSectionProps = {
-  title?: string;
-  items: Array<{ label: string; href: string }>;
+/* -------------------------------------------------------------------------- */
+/* Types */
+/* -------------------------------------------------------------------------- */
+
+type NavItem = {
+  label: string;
+  href: string;
 };
 
-const ListSection: FC<ListSectionProps> = ({ title, items }) => (
-  <section aria-label={title ?? "footer section"}>
-    {title ? (
-      <h3 className="uppercase text-green-600 font-semibold text-sm mb-4">
-        {title}
-      </h3>
-    ) : null}
-    <ul className="text-white space-y-3 py-4 text-sm">
-      {items.map((item) => (
-        <li key={item.href}>
-          <Link
-            href={item.href}
-            className="uppercase hover:text-green-400 transition-colors"
-          >
-            {item.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </section>
-);
+type FooterSection = {
+  title?: string;
+  items: NavItem[];
+};
 
-const socialIcons = [
-  { icon: FaFacebookF, label: "Facebook", href: "#" },
-  { icon: FaYoutube, label: "YouTube", href: "#" },
-  { icon: FaXTwitter, label: "X / Twitter", href: "#" },
-  { icon: FaInstagramSquare, label: "Instagram", href: "#" },
-  { icon: FaTiktok, label: "TikTok", href: "#" },
+type SocialLink = {
+  label: string;
+  href: string;
+  icon?: ReactNode;
+};
+
+/* -------------------------------------------------------------------------- */
+/* Reusable Components */
+/* -------------------------------------------------------------------------- */
+
+function ListSection({ title, items }: FooterSection) {
+  return (
+    <section aria-label={title ?? "footer section"}>
+      {title && (
+        <h3 className="uppercase text-green-600 font-semibold text-sm mb-4">
+          {title}
+        </h3>
+      )}
+
+      <ul className="text-white space-y-3 py-4 text-sm">
+        {items.map(({ label, href }) => (
+          <li key={href}>
+            <Link
+              href={href}
+              className="uppercase hover:text-green-400 transition-colors"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function SocialLinks({ items }: { items: SocialLink[] }) {
+  return (
+    <div className="pt-4 flex gap-2 justify-center sm:justify-start">
+      {items.map(({ label, href, icon }) => (
+        <a
+          key={label}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={label}
+          className="border border-gray-700 p-2 rounded-full hover:bg-white hover:text-black transition-colors"
+        >
+          {icon ?? <span className="block w-5 h-5" />}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Data */
+/* -------------------------------------------------------------------------- */
+
+const socialLinks: SocialLink[] = [
+  {
+    label: "Facebook",
+    href: "#",
+    icon: <FacebookIcon className="w-5 h-5" />,
+  },
+  {
+    label: "YouTube",
+    href: "#",
+    icon: <YoutubeIcon className="w-5 h-5" />,
+  },
+  {
+    label: "X / Twitter",
+    href: "#",
+    icon: <XIcon className="w-5 h-5" />,
+  },
+  {
+    label: "Instagram",
+    href: "#",
+    icon: <InstagramIcon className="w-5 h-5" />,
+  },
+  {
+    label: "TikTok",
+    href: "#",
+    icon: <TiktokIcon className="w-5 h-5" />,
+  },
 ];
 
-const Footer: FC = () => {
-  const topCategory = [
-    { label: "Fashion", href: "/categories/fashion" },
-    { label: "Smart phone", href: "/categories/smartphone" },
-    { label: "Electronics", href: "/categories/electronics" },
-    { label: "Grocery", href: "/categories/grocery" },
-    { label: "Beauty", href: "/categories/beauty" },
-    { label: "Furniture", href: "/categories/furniture" },
-    { label: "Toys", href: "/categories/toys" },
-  ];
+const footerSections: FooterSection[] = [
+  {
+    title: "Top Category",
+    items: [
+      { label: "Fashion", href: "/categories/fashion" },
+      { label: "Smart phone", href: "/categories/smartphone" },
+      { label: "Electronics", href: "/categories/electronics" },
+      { label: "Grocery", href: "/categories/grocery" },
+      { label: "Beauty", href: "/categories/beauty" },
+      { label: "Furniture", href: "/categories/furniture" },
+      { label: "Toys", href: "/categories/toys" },
+    ],
+  },
+  {
+    title: "Electronics",
+    items: [
+      { label: "Gadget", href: "/categories/gadget" },
+      { label: "Camera", href: "/categories/camera" },
+      { label: "Computer", href: "/categories/computer" },
+      { label: "Electric", href: "/categories/electric" },
+      { label: "Television", href: "/categories/television" },
+      { label: "Refrigerator", href: "/categories/refrigerator" },
+      { label: "Smart phone", href: "/categories/smartphone" },
+    ],
+  },
+  {
+    title: "Grocery",
+    items: [
+      { label: "Oil", href: "/categories/oil" },
+      { label: "Dairy", href: "/categories/dairy" },
+      { label: "Rice", href: "/categories/rice" },
+      { label: "Baby care", href: "/categories/baby-care" },
+      { label: "Milk", href: "/categories/milk" },
+      { label: "Ready mix", href: "/categories/ready-mix" },
+      { label: "Flour", href: "/categories/flour" },
+    ],
+  },
+  {
+    title: "Beauty",
+    items: [
+      { label: "Grooming & wellness", href: "/categories/grooming-wellness" },
+      { label: "Skin care", href: "/categories/skin-care" },
+      { label: "Body care", href: "/categories/body-care" },
+      { label: "Cosmetic", href: "/categories/cosmetic" },
+      { label: "Health care", href: "/categories/health-care" },
+      { label: "Hair care", href: "/categories/hair-care" },
+      { label: "Oral care", href: "/categories/oral-care" },
+    ],
+  },
+  {
+    title: "Fashion",
+    items: [
+      { label: "Men", href: "/categories/men" },
+      { label: "Women", href: "/categories/women" },
+      { label: "Kids", href: "/categories/kids" },
+      { label: "Travel", href: "/categories/travel" },
+      { label: "Jewellery", href: "/categories/jewellery" },
+      { label: "Girls", href: "/categories/girls" },
+      { label: "Cosmetics", href: "/categories/cosmetics" },
+    ],
+  },
+];
 
-  const electronics = [
-    { label: "Gadget", href: "/categories/gadget" },
-    { label: "Camera", href: "/categories/camera" },
-    { label: "Computer", href: "/categories/computer" },
-    { label: "Electric", href: "/categories/electric" },
-    { label: "Television", href: "/categories/television" },
-    { label: "Refrigerator", href: "/categories/refrigerator" },
-    { label: "Smart phone", href: "/categories/smartphone" },
-  ];
+const legalLinks: NavItem[] = [
+  { label: "About us", href: "/about" },
+  { label: "Terms & condition", href: "/terms" },
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Cancellation & refund policy", href: "/refund-policy" },
+  { label: "Contact us", href: "/contact" },
+  { label: "FAQs", href: "/faq" },
+  { label: "Store location", href: "/store-location" },
+];
 
-  const grocery = [
-    { label: "Oil", href: "/categories/oil" },
-    { label: "Dairy", href: "/categories/dairy" },
-    { label: "Rice", href: "/categories/rice" },
-    { label: "Baby care", href: "/categories/baby-care" },
-    { label: "Milk", href: "/categories/milk" },
-    { label: "Ready mix", href: "/categories/ready-mix" },
-    { label: "Flour", href: "/categories/flour" },
-  ];
+/* -------------------------------------------------------------------------- */
+/* Footer */
+/* -------------------------------------------------------------------------- */
 
-  const beauty = [
-    { label: "Grooming & wellness", href: "/categories/grooming-wellness" },
-    { label: "Skin care", href: "/categories/skin-care" },
-    { label: "Body care", href: "/categories/body-care" },
-    { label: "Cosmetic", href: "/categories/cosmetic" },
-    { label: "Health care", href: "/categories/health-care" },
-    { label: "Hair care", href: "/categories/hair-care" },
-    { label: "Oral care", href: "/categories/oral-care" },
-  ];
-
-  const fashion = [
-    { label: "Men", href: "/categories/men" },
-    { label: "Women", href: "/categories/women" },
-    { label: "Kids", href: "/categories/kids" },
-    { label: "Travel", href: "/categories/travel" },
-    { label: "Jewellery", href: "/categories/jewellery" },
-    { label: "Girls", href: "/categories/girls" },
-    { label: "Cosmetics", href: "/categories/cosmetics" },
-  ];
-
-  const legalAndInfo = [
-    { label: "About us", href: "/about" },
-    { label: "Terms & condition", href: "/terms" },
-    { label: "Privacy policy", href: "/privacy" },
-    { label: "Cancellation & refund policy", href: "/refund-policy" },
-    { label: "Contact us", href: "/contact" },
-    { label: "FAQs", href: "/faq" },
-    { label: "Store location", href: "/store-location" },
-  ];
-
+export default function Footer() {
   return (
     <>
       <NewsletterSection />
+
       <footer className="bg-black py-10">
         <div className="container-custom mx-auto px-4">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 sm:gap-14 gap-4 justify-center items-center sm:items-start text-center sm:text-start">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 sm:gap-14 gap-4 text-center sm:text-start">
+            {/* Brand + Legal */}
             <div>
-              <Link href="/" className="inline-block shrink-0">
+              <Link href="/" className="inline-block">
                 <span className="text-2xl font-bold">
                   <span className="text-white">YOUR</span>
                   <span className="text-green-600">CHOICE</span>
                 </span>
               </Link>
+
               <nav className="text-white flex flex-col gap-3 pt-4 text-sm">
-                {legalAndInfo.map((item) => (
+                {legalLinks.map(({ label, href }) => (
                   <Link
-                    key={item.href}
-                    href={item.href}
+                    key={href}
+                    href={href}
                     className="uppercase hover:text-green-400 transition-colors"
                   >
-                    {item.label}
+                    {label}
                   </Link>
                 ))}
 
                 <div className="py-4">
-                  <h3 className="uppercase text-sm pb-4 md:pb-2 border-b border-gray-700 sm:inline lg:block">
+                  <h3 className="uppercase text-sm pb-4 border-b border-gray-700 sm:inline lg:block">
                     Share your love
                   </h3>
-                  <div className="pt-4 flex gap-2 justify-center sm:justify-start">
-                    {socialIcons.map(({ icon: Icon, label, href }) => (
-                      <a
-                        key={label}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={label}
-                        className="border border-gray-700 p-2 text-2xl rounded-full hover:bg-white hover:text-black transition-colors"
-                      >
-                        <Icon />
-                      </a>
-                    ))}
-                  </div>
+
+                  <SocialLinks items={socialLinks} />
                 </div>
               </nav>
             </div>
 
-            <ListSection title="Top Category" items={topCategory} />
-            <ListSection title="Electronics" items={electronics} />
-            <ListSection title="Grocery" items={grocery} />
-            <ListSection title="Beauty" items={beauty} />
-            <ListSection title="Fashion" items={fashion} />
+            {footerSections.map((section) => (
+              <ListSection key={section.title} {...section} />
+            ))}
           </div>
 
           <div className="pb-4 px-2 hidden lg:block">
@@ -166,7 +237,6 @@ const Footer: FC = () => {
               width={800}
               height={50}
               className="w-full h-auto"
-              priority={false}
             />
           </div>
 
@@ -178,6 +248,4 @@ const Footer: FC = () => {
       </footer>
     </>
   );
-};
-
-export default memo(Footer);
+}
