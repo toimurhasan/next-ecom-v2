@@ -1,8 +1,23 @@
 import Image from "next/image";
 
-const SmallCard = () => {
+interface SmallCardProps {
+  imageSrc: string;
+  alt?: string;
+}
+
+const SmallCard: React.FC<SmallCardProps> = ({
+  imageSrc,
+  alt = "Small card image",
+}) => {
   return (
-    <div className="h-[225px] bg-[url(/Frame30.png)] bg-cover bg-center relative"></div>
+    <div className="relative h-[225px] w-full">
+      <Image
+        src={imageSrc}
+        alt={alt}
+        fill
+        className="object-cover object-center"
+      />
+    </div>
   );
 };
 
