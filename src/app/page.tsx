@@ -7,11 +7,38 @@ import PromotionalBanners from "@/components/home/PromotionalBanners/Promotional
 import TestimonialsSection from "@/components/home/TestimonialsSection/TestimonialsSection";
 import { Product } from "@/types";
 
-
 // Sample product data - in a real app, this would come from an API
 const topSellingProducts: Product[] = [
   {
     id: "1",
+    title: "Tecno Spark 20 Pro - Official",
+    price: 20999.0,
+    image: "/products/spark20pro.jpg",
+    description: "Latest smartphone with advanced features",
+  },
+  {
+    id: "2",
+    title: "Tecno Spark 20 Pro - Official",
+    price: 20999.0,
+    image: "/products/spark20pro.jpg",
+    description: "Latest smartphone with advanced features",
+  },
+  {
+    id: "3",
+    title: "Tecno Spark 20 Pro - Official",
+    price: 20999.0,
+    image: "/products/spark20pro.jpg",
+    description: "Latest smartphone with advanced features",
+  },
+  {
+    id: "4",
+    title: "Tecno Spark 20 Pro - Official",
+    price: 20999.0,
+    image: "/products/spark20pro.jpg",
+    description: "Latest smartphone with advanced features",
+  },
+  {
+    id: "5",
     title: "Tecno Spark 20 Pro - Official",
     price: 20999.0,
     image: "/products/spark20pro.jpg",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import NewsletterSection from "./NewsletterSection";
+import NewsletterSection from "../NewsletterSection";
 import { ReactNode } from "react";
 import {
   FacebookIcon,
@@ -234,8 +234,8 @@ export default function Footer() {
             <Image
               src="/pay-with.png"
               alt="Payment methods accepted"
-              width={800}
-              height={50}
+              width={1320}
+              height={43}
               className="w-full h-auto"
             />
           </div>

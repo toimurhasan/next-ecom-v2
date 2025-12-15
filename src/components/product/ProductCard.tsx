@@ -1,4 +1,3 @@
-
 import { Product } from "../../types";
 
 import Image from "next/image";
@@ -11,19 +10,17 @@ export default function ProductCard({ product }: { product: Product }) {
     <article className="p-2 sm:p-3">
       <div>
         {/* background image */}
-        <div className="bg-[url(/md-card-bg.png)] h-52 bg-cover bg-center relative text-sm bg-blend-screen">
+        <div>
           <span className="bg-primary-500 px-2 py-1 absolute top-1 left-1 text-xs text-white">
             TK 300 OFF
           </span>
 
-          {/* centered foreground image */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div>
             <Image
-              src="/md-card.png"
+              src="/Frame88.png"
               alt="Medium card"
-              width={150}
-              height={150}
-              className="h-32 w-auto"
+              width={251}
+              height={211}
             />
           </div>
         </div>

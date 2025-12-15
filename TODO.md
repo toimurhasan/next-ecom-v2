@@ -1,0 +1,1 @@
+- Fix default array props in AllCategories.tsx to use stable, unique ids instead of Math.random()

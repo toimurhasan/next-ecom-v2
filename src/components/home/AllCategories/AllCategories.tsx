@@ -14,9 +14,9 @@ export interface AllCategoriesProps {
 
 const AllCategories: React.FC<AllCategoriesProps> = ({
   title = "Our All Categories",
-  smallCategoryItems = [],
-  largeCategoryItems = [],
-  smallestCategoryItems = [],
+  smallCategoryItems = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
+  largeCategoryItems = [{}, {}, {}],
+  smallestCategoryItems = [{}, {}, {}, {}, {}, {}, {}, {}],
   className = "",
 }) => {
   return (
@@ -36,7 +36,7 @@ const AllCategories: React.FC<AllCategoriesProps> = ({
           ))}
         </div>
 
-        <div className="lg:py-5 py-2 grid grid-cols-2 sm:grid-cols-4 gap-2 lg:gap-5 px-2">
+        <div className="lg:py-5 py-2 grid grid-cols-2 sm:grid-cols-6 gap-2 lg:gap-5 px-2">
           <div className="col-span-2 row-span-2">
             <LargeCard />
           </div>
@@ -47,5 +47,6 @@ const AllCategories: React.FC<AllCategoriesProps> = ({
       </div>
     </section>
   );
-}
-export default React.memo(AllCategories);
+};
+
+export default AllCategories;

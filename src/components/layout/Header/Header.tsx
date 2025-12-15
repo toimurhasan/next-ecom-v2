@@ -1,13 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import SearchBar from "../forms/SearchBar";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import LightningBoltIcon from "../icons/LightningBoltIcon";
-import HeartIcon from "../icons/HeartIcon";
-import ShoppingBagIcon from "../icons/ShoppingBagIcon";
-import MenuIcon from "../icons/MenuIcon";
+import SearchBar from "@/components/forms/SearchBar";
+import {
+  HeartIcon,
+  LightningBoltIcon,
+  MenuIcon,
+  ShoppingBagIcon,
+} from "@/components/icons";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
